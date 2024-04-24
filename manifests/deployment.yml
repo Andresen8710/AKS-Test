@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: andresenakstest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: andresenakstest
+  template:
+    metadata:
+      labels:
+        app: andresenakstest 
+    spec:
+      containers:
+        - name: andresenakstest 
+          image: andresencontainer.azurecr.io/andresenakstest
+          ports:
+          - containerPort: 80
